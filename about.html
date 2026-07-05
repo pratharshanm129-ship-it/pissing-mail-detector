@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}About - PhishGuard{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <h1 class="fw-bold mb-4 text-center">About PhishGuard</h1>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="fw-bold"><i class="bi bi-info-circle text-primary me-2"></i>What is PhishGuard?</h5>
+                    <p class="text-muted">
+                        PhishGuard is a beginner-friendly web application built to help users identify
+                        potentially dangerous phishing emails. It was created as an educational project
+                        to demonstrate how a simple rule-based system can flag suspicious content without
+                        needing any complex machine learning model.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="fw-bold"><i class="bi bi-gear text-primary me-2"></i>How Detection Works</h5>
+                    <p class="text-muted">
+                        Our detection engine scans the submitted email text for a curated list of
+                        common phishing "red flag" keywords and phrases, such as:
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge keyword-badge">verify</span>
+                        <span class="badge keyword-badge">password</span>
+                        <span class="badge keyword-badge">urgent</span>
+                        <span class="badge keyword-badge">click here</span>
+                        <span class="badge keyword-badge">login</span>
+                        <span class="badge keyword-badge">bank</span>
+                        <span class="badge keyword-badge">gift</span>
+                        <span class="badge keyword-badge">winner</span>
+                        <span class="badge keyword-badge">account suspended</span>
+                        <span class="badge keyword-badge">free</span>
+                    </div>
+                    <p class="text-muted mb-0">
+                        The more matching keywords found, the higher the confidence that the email is a
+                        phishing attempt, and the higher the assigned risk level (Low, Medium, or High).
+                    </p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="fw-bold"><i class="bi bi-mortarboard text-primary me-2"></i>Educational Purpose</h5>
+                    <p class="text-muted mb-0">
+                        This project is intentionally kept simple so that students learning full-stack
+                        web development can understand every part of it -- from the Flask backend and
+                        SQLite database, to the Bootstrap-powered frontend. It is not intended to replace
+                        professional, enterprise-grade email security software.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="fw-bold"><i class="bi bi-code-slash text-primary me-2"></i>Technology Stack</h5>
+                    <ul class="text-muted mb-0">
+                        <li>Backend: Python (Flask)</li>
+                        <li>Database: SQLite</li>
+                        <li>Frontend: HTML, CSS, JavaScript, Bootstrap 5</li>
+                        <li>Authentication: Session-based login with hashed passwords</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}Home - PhishGuard{% endblock %}
+
+{% block content %}
+<!-- ============== HERO SECTION ============== -->
+<section class="hero-section text-white">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="display-5 fw-bold mb-3">Detect Phishing Emails Before They Fool You</h1>
+                <p class="lead mb-4">
+                    PhishGuard uses smart keyword-based analysis to scan email content and
+                    instantly tell you if it looks like a phishing attempt -- complete with
+                    confidence score, risk level, and safety recommendations.
+                </p>
+                <div class="d-flex gap-3 flex-wrap">
+                    {% if session.user_id %}
+                        <a href="{{ url_for('main.detect') }}" class="btn btn-light btn-lg text-primary fw-semibold">
+                            <i class="bi bi-search me-1"></i> Analyze an Email
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for('main.register') }}" class="btn btn-light btn-lg text-primary fw-semibold">
+                            <i class="bi bi-person-plus me-1"></i> Get Started Free
+                        </a>
+                        <a href="{{ url_for('main.login') }}" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                <i class="bi bi-shield-check display-1 hero-icon"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============== FEATURES SECTION ============== -->
+<section class="container py-5">
+    <h2 class="text-center fw-bold mb-5">Why Use PhishGuard?</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 feature-card shadow-sm">
+                <div class="card-body text-center">
+                    <i class="bi bi-key-fill display-5 text-primary mb-3"></i>
+                    <h5 class="card-title fw-bold">Keyword-Based Detection</h5>
+                    <p class="card-text text-muted">
+                        Scans email content for common phishing red flags like
+                        "verify", "urgent", "click here" and more.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 feature-card shadow-sm">
+                <div class="card-body text-center">
+                    <i class="bi bi-speedometer2 display-5 text-primary mb-3"></i>
+                    <h5 class="card-title fw-bold">Instant Results</h5>
+                    <p class="card-text text-muted">
+                        Get a prediction, confidence percentage, and risk level in
+                        less than a second -- no waiting, no complicated setup.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 feature-card shadow-sm">
+                <div class="card-body text-center">
+                    <i class="bi bi-clock-history display-5 text-primary mb-3"></i>
+                    <h5 class="card-title fw-bold">Prediction History</h5>
+                    <p class="card-text text-muted">
+                        Every email you check is saved to your personal dashboard so
+                        you can track and review past results anytime.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============== HOW IT WORKS ============== -->
+<section class="how-it-works-section py-5">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">How It Works</h2>
+        <div class="row g-4 text-center">
+            <div class="col-md-3">
+                <div class="step-circle mx-auto mb-3">1</div>
+                <h6 class="fw-bold">Register / Login</h6>
+                <p class="text-muted small">Create a free account to get started.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="step-circle mx-auto mb-3">2</div>
+                <h6 class="fw-bold">Paste Email Text</h6>
+                <p class="text-muted small">Copy the suspicious email into the detector.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="step-circle mx-auto mb-3">3</div>
+                <h6 class="fw-bold">Get Instant Analysis</h6>
+                <p class="text-muted small">View prediction, confidence, and risk level.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="step-circle mx-auto mb-3">4</div>
+                <h6 class="fw-bold">Stay Protected</h6>
+                <p class="text-muted small">Follow the recommendation to stay safe.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
